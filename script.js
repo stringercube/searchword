@@ -93,9 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const startOverButton = document.getElementById("start-over");
     const newGameButton = document.querySelector("footer button");
 
-    // Initialize the game
-    initGame();
-
     // Function to initialize a new game
     function initGame() {
         // Reset game state
@@ -204,23 +201,24 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
+    // Initialize the game
+    initGame();
+
     // Event listeners for buttons
-    startOverButton.addEventListener("click", () => {
-        // Reset current game without changing the word
-        foundLetters = [];
-
-        // Reset highlights in target word
-        const targetLetterSpans = targetElement.querySelectorAll("span");
-        targetLetterSpans.forEach((span) => span.classList.remove("found"));
-
-        // Reset highlights in word salad
-        const saladLetterSpans = wordSaladElement.querySelectorAll("span");
-        saladLetterSpans.forEach((span) => span.classList.remove("found"));
-
-        // Reset timer and message
-        startTime = new Date();
-        wellDoneElement.textContent = "";
+    document.addEventListener("click", function (event) {
+        if (event.target.id === "start-over") {
+            console.log("Start over clicked via delegation");
+            // Start over logic
+            foundLetters = [];
+            const targetLetterSpans = targetElement.querySelectorAll("span");
+            targetLetterSpans.forEach((span) => span.classList.remove("found"));
+            const saladLetterSpans = wordSaladElement.querySelectorAll("span");
+            saladLetterSpans.forEach((span) => span.classList.remove("found"));
+            gameStartTime = new Date();
+            wellDoneElement.textContent = "";
+        } else if (event.target.closest("footer button")) {
+            console.log("New game clicked via delegation");
+            initGame();
+        }
     });
-
-    newGameButton.addEventListener("click", initGame);
 });
