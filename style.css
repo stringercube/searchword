@@ -139,23 +139,3 @@ footer button {
 footer button:hover {
     background-color: #0b7dda;
 }
-
-/* Responsive Design
-@media (max-width: 600px) {
-    .target {
-        font-size: 1.2em;
-    }
-
-    .target span {
-        width: 25px;
-        height: 25px;
-    }
-
-    .word-salad span {
-        width: 20px;
-        height: 20px;
-        font-size: 0.9em;
-    }
-}
-
-*/
