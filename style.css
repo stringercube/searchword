@@ -21,7 +21,9 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     display: flex;
+    justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
@@ -138,7 +140,7 @@ footer button:hover {
     background-color: #0b7dda;
 }
 
-/* Responsive Design */
+/* Responsive Design
 @media (max-width: 600px) {
     .target {
         font-size: 1.2em;
@@ -155,3 +157,5 @@ footer button:hover {
         font-size: 0.9em;
     }
 }
+
+*/
