@@ -1,9 +1,8 @@
 /* General Styles */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0 auto; /* Keep auto margin for centering on very large screens */
+    padding: 20px; /* Default padding for larger screens */
     background-color: #f5f5f5;
     color: #333;
 }
@@ -90,6 +89,10 @@ header {
     flex-wrap: wrap;
     gap: 0px;
     margin-bottom: 20px;
+    -webkit-user-select: none; /* Disable selection on container */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .word-salad span {
@@ -100,6 +103,9 @@ header {
     justify-content: center;
     border-radius: 4px;
     cursor: pointer;
+    -webkit-user-select: none; /* Disable selection on letters */
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
@@ -138,4 +144,11 @@ footer button {
 
 footer button:hover {
     background-color: #0b7dda;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Reduce padding on small screens */
+    }
 }
